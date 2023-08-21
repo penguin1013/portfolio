@@ -1,0 +1,421 @@
+
+.btn-open-search{
+	transition: transform .3s .2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+	display:inline-block;
+	@include vw(margin-right,30px);
+
+	@include vw(width, 40px);
+	@include vw(height, 40px);
+	background: url(//img.eduwill.net/eduwill/img/common/icon/icon_search.png) no-repeat 0 0;
+	background-size:cover;
+
+	@media screen and (min-width: 480px) { 
+		@include vw(width, 30px);
+		@include vw(height, 30px);
+	}
+
+	@media screen and (min-width: 640px) { 
+		@include vw(width, 20px);
+		@include vw(height, 20px);
+	}
+
+	@include breakpoint(desktop){
+		margin-right:0;
+		@include vw(width, 20px);
+		@include vw(height, 20px);
+	}
+	
+}
+
+.open-search{
+	transform: translateY(-300%);
+	transition: transform .38s 0s cubic-bezier(0.645, 0.045, 0.355, 1);
+	position:absolute;@include vw(right,20px);@include vw(top,60px);z-index:3;
+	width:95%;
+	//@include vw(padding-top,78px);
+	@include breakpoint(maxMobile){
+		//@include vw(padding-top,50px);
+	}
+	@include breakpoint(desktop){
+		right:3.75%;
+		top:80px;
+		width:99%;
+	}
+
+	.box{
+		line-height:1;	opacity:0;
+		background-color:#fff;
+		text-align:right;
+		//padding-bottom:20px;
+		form{
+			display:inline-block;
+			border-bottom: 2px solid #000;
+			width:100%;
+			@include breakpoint(desktop){
+				width: 250px;
+			}
+			line-height:1;
+			input[type="text"] {
+				display: inline-block;
+				vertical-align: baseline;
+				box-sizing: border-box;
+				border: none;
+				@include vw(padding, 30px 0 0);
+				width:80%;
+				@include vw(font-size, 30px);
+				line-height: 1;
+				@include breakpoint(desktop){
+					@include vw(padding, 0px 15px 0px 0px);
+					width:160px;
+					@include vw(font-size, 18px);
+				}
+			}
+
+			a{
+				display: inline-block;
+				text-decoration: none;
+				outline: none;
+				line-height:1;
+				strong{color:#000;}
+			}
+		}
+	}
+
+	.btn-close-search{
+		@include vw(width,42px);
+		@include vw(height,42px);
+		background-color:#fff;
+		@include close(60px, 60px, 2px, #000);
+		@include vw(top, -45px);
+		@include breakpoint(desktop){
+			@include close(50px, 50px, 2px, #000);
+			top:-55px;
+			right:-10px;
+		}
+		&:before{
+			transform: scale(0,0) rotate(45deg);
+			transition: transform .4s 0s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+
+		&:after{
+			transform: scale(0,0) rotate(315deg);
+			transition: transform .4s 0s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+	}
+
+
+}
+
+.onOpenSearch{
+	.open-search{
+		transform: translateY(0%);
+		.box{
+			opacity:1;
+			transition-delay:0.38s;
+
+		}
+	}
+
+	.btn-close-search{
+		&:before{
+			transform: scale(1,1) rotate(45deg);
+			transition: transform .5s .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+
+		&:after{
+			transform: scale(1,1) rotate(315deg);
+			transition: transform .5s .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+		}
+
+	}
+
+	.btn-open-search{
+		transform: translateY(-300%);
+		transition: transform .35s 0s cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+
+#wrap{
+    header{
+        position:relative;z-index:1002;
+        background-color:#fff;
+
+        &.change{
+            background-color:#fff;
+        }
+
+        &.fixed{
+            position:fixed;left:0;top:0;width:100%;
+            background-color:#fff;
+
+            #gnb ul li a{
+                @include breakpoint(maxMobile){
+                    color:#000 !important;
+                }
+            }
+
+            #menu .menu-icon span{background-color:#000 !important;}
+        }
+        
+        .wrap{
+            display:flex;
+            align-items: center;
+            position:relative;
+            @include vw(padding-top,30px);
+			@include vw(padding-bottom,30px);
+			padding-left: 3.75%;
+			padding-right: 3.75%;
+            @include boxSizing(border-box);
+            max-width:100%;
+        
+            .logo{
+				position:relative;z-index:4;
+                width:auto;text-align:left;
+                a{
+                    display:inline-block;
+					vertical-align:middle;
+                    &.logo-img{
+						background: url(//img.eduwill.net/Img2/Common/BI/type2/live/logo.svg) no-repeat 0 0;
+						background-size:contain;
+						@include vw(width, 101px);
+						@include vw(height, 48px);
+						@include breakpoint(maxMobile){
+							@include vw(width, 91px);
+							@include vw(height, 38px);
+						}
+                    }
+
+					&.logo-text{
+						position:relative;
+						font-family:$font-eduwill-B;
+						@include vw(font-size, 28px);
+						@include vw(margin-left,16px);
+						@include breakpoint(maxMobile){
+							@include vw(font-size, 24px);
+						}
+						// @include vw(padding-left,10px);	
+						// &:before{
+						// 	content:''; width:2px;@include vw(height, 20px);
+						// 	background-color:#000;position:absolute;left:0;top:50%;@include vw(margin-top, -10px);
+						// }
+					}
+                }
+            }
+
+            #gnb{
+                display:none;
+                width:100%;text-align:left;
+                position:absolute;right:auto;top:52px;left:0;z-index:3;
+                padding-bottom:35px;
+                background-color:#fff;
+				.btn-open-search{display:none;}
+                @include breakpoint(maxMobile){
+                    top:98px;
+                }
+
+                @include breakpoint(desktop){
+                    display:flex;align-items:center;
+                    text-align:right;width:auto;padding-bottom:0;
+                    left:auto;right:3.75%;top:35px;
+                    background-color:transparent;
+					.btn-open-search{display:block;}
+                }
+
+                ul{
+                    font-size:0;
+                    li{
+                        position:relative;display:block;margin-right:0;margin-top:25px;
+                        text-align:center;
+                        @include breakpoint(desktop){
+                            display:inline-block;margin-top:0;margin-right:30px;
+                        }
+
+                        @media screen and (min-width: 1200px) {
+                            margin-right:50px;
+
+                        }
+
+                        a{
+                            display:inline-block;
+                            @include vw(font-size, 28px);
+                            color:#222;font-weight:500;
+                            @include breakpoint(desktop){
+                                @include vw(font-size, 20px);
+                            }
+                        }
+
+						&.active, &:hover{
+							a{
+								border-bottom:2px solid #000;
+								font-weight:700;
+							}
+						}
+                    }
+                }
+            }
+
+        }
+        
+        #menu{
+            margin-left:auto;
+            display:flex;
+            @include breakpoint(desktop){
+                display:none;
+            }
+
+            .menu-icon,
+            .menu-icon span {
+                display : inline-block;
+                transition : all .4s;
+                box-sizing : border-box;
+            }
+
+            .menu-icon {
+                position : relative;
+                width : 24px;
+                height : 18px;
+            
+
+                span {
+                    position : absolute;
+                    left : 0;
+                    width : 100%;
+                    height : 2px;
+                    background-color : #000;
+                    &:nth-of-type(1) {top : 0;}
+                    &:nth-of-type(2) {top : 8px;}
+                    &:nth-of-type(3) {bottom : 0;}
+                }
+        
+                &.active{
+                    span{
+                        // background-color : #000;
+                        &:nth-of-type(1) {
+                            -webkit-transform : translateY(8px) rotate(-45deg);
+                            transform : translateY(8px) rotate(-45deg);
+                        }
+        
+                        &:nth-of-type(2) {
+                            left : 50%;
+                            opacity : 0;
+                            -webkit-animation:active-menu-bar .8s forwards;
+                            animation : active-menu-bar .8s forwards;
+                        }
+        
+                        &:nth-of-type(3) {
+                            -webkit-transform : translateY(-8px) rotate(45deg);
+                            transform : translateY(-8px) rotate(45deg);
+                        }
+                    }
+                }
+        
+            }
+        
+            @-webkit-keyframes active-menu-bar {
+                100% {
+                    height : 0;
+                }
+            }
+            @keyframes active-menu-bar{
+                100% {
+                    height : 0;
+                }
+            }
+        }
+    }
+
+    #contents{
+        position:relative;
+        background-color:#fff;
+		min-height:80vh;
+
+		@include vw(padding,0 0 50px);
+    }
+
+    footer {
+        background-color:#222;
+		@include vw(padding,30px 0px);
+		@include breakpoint(maxMobile){
+			@include vw(padding,20px 0px);
+		}
+        .wrap{
+			max-width:100%;
+            text-align:center;
+            @include breakpoint(maxMobile){
+                display:flex;
+                align-items:center;
+				padding-left: 3.75%;
+				padding-right: 3.75%;
+				
+            }
+
+            @include vw(font-size, 24px);
+            color:#999;
+
+            @include breakpoint(desktop){
+                font-size:14px;
+            }
+
+            .footer-copyright{
+				display:flex;
+				align-items:center;
+				justify-content: center;
+				@include breakpoint(desktop){
+					justify-content: flex-start;
+				}
+
+                .footer-logo{
+					display:none;
+					background: url(//img.eduwill.net/Img2/Common/BI/type2/live/logo_wh.svg) no-repeat 0 0;
+					background-size:contain;
+					@include vw(width, 91px);
+					@include vw(height, 38px);
+                    margin:0 auto;
+					@include breakpoint(maxMobile){
+						display:block;
+					}
+                }
+				
+				.footer-text{
+					display:none;
+					@include vw(margin-left,17px);
+					@include vw(font-size,20px);
+					font-weight:500;
+					@include breakpoint(maxMobile){
+						display:block;
+						letter-spacing:-2px;
+                    }
+				}
+
+                .copyright{
+					font-weight:300;
+					@include vw(font-size,18px);
+                    @include breakpoint(maxMobile){
+                        margin:0;
+						font-size:12px;
+						@include vw(margin-left,10px);
+                    }
+                }
+            }
+
+            .footer-link{
+                margin-left:auto;
+                a{
+                    @include breakpoint(desktop){
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    @include vw(padding, 14px 30px);
+                    border: solid 1px #646464;
+                    @include vw(font-size, 24px);
+                    @include breakpoint(desktop){
+                        font-size:14px;
+                        @include vw(padding, 7px 15px);
+                    }
+                }
+            }
+        }
+    }
+}
