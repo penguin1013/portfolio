@@ -15,12 +15,12 @@
 // 플로팅 해제
 %clearfix {
 	*zoom: 1;
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		display: table;
 	}
-	&:after {
+	&::after {
 		clear: both;
 	}
 }
@@ -57,7 +57,6 @@
 	border: 0;
 	text-indent: -9999px;
 }
-
 
 // 그리드 작업
 .grid {
@@ -204,6 +203,14 @@
 	&:nth-child(10):nth-last-child(1) { width: 10%; }
 }
 
+// img
+%wide {
+	position: relative;
+	left: 50%;
+	display: block;
+	@include translateX(-50%);
+}
+
 // 별점
 %star {
 	display: inline-block;
@@ -224,7 +231,7 @@
 		position: relative;
 		@include vw(padding-left, 10px);
 		text-align: left;
-		&:before {
+		&::before {
 			content: '·';
 			position: absolute;
 			top: 0;
@@ -240,7 +247,7 @@
 		position: relative;
 		@include vw(padding-left, 10px);
 		text-align: left;
-		&:before {
+		&::before {
 			content: '-';
 			position: absolute;
 			top: 0;
@@ -256,7 +263,7 @@
 		position: relative;
 		@include vw(padding-left, 14px);
 		text-align: left;
-		&:before {
+		&::before {
 			content: '*';
 			position: absolute;
 			top: 0;
@@ -272,7 +279,7 @@
 		position: relative;
 		@include vw(padding-left, 14px);
 		text-align: left;
-		&:before {
+		&::before {
 			content: '※';
 			position: absolute;
 			top: 0;
@@ -312,9 +319,3 @@
 	}
 }
 
-%wide {
-	position: relative;
-	left: 50%;
-	display: block;
-	@include translateX(-50%);
-}

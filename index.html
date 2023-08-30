@@ -1,283 +1,402 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, height=device-height, maximum-scale=1.0" />
-    <title>title</title>
-    <meta name="title" content="" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta property="fb:app_id" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ko_KR" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-<!-- 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
--->
-    <link rel="stylesheet" href="libs/slick.css" />
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JJINNYANG PORTFOLIO</title>
+    <meta name="author" content="penguin1013" />
+    <meta name="keywords" content="찐냥포트폴리오" />
+    <meta name="description" content="퍼블리셔 이수진 포트폴리오입니다." />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="loading">
+        <div class="loading_img">
+            <div class="circle one"></div>
+            <div class="circle two"></div>
+            <div class="circle three"></div>
+        </div>
+    </div>
 
-    <script src="libs/jquery-3.7.0.min.js"></script>
-    <script src="libs/slick.min.js"></script>
-    <script src="libs/gsap-3.12.2.min.js"></script>
-    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
-  </head>
-	<body>
-		<div id="wrap">
-			<div id="container">
-				<!-- header -->
-				<header>
-					<div class="wrap">
-						<div class="logo">
-							<a href="javascript:;" class="logo-img"><span class="sr-only">eduwill</span></a>
-							<a href="javascript:;" class="logo-text">Portfolio</a>
-						</div>
+    <main id="wrap">
+        <header id="header">
+            <div class="header_wrap">
+                <h1><a href="#section1">JJIN<br />NYANG</a></h1>
+                <a href="javascript:;" class="btn_menu">
+                    <img src="image/pc/btn_menu_off.png" alt="" class="off">
+                    <img src="image/pc/btn_menu_on.png" alt="" class="on">
+                </a>
+                <p class="bg"><span></span></p>
+            </div>
+            <nav id="gnb">
+                <div class="gnb_wrap">
+                    <ul>
+                        <li><a href="#section1">HOME</a></li>
+                        <li><a href="#section2">ABOUT</a></li>
+                        <li><a href="#section3">AWARDS</a></li>
+                        <li><a href="#section4">RESUME</a></li>
+                        <li><a href="#section5">WORK</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section id="section1">
+            <div class="video_wrap">
+                <video autoplay loop muted>
+                    <source src="image/video/main_video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="title_wrap">
+                <div class="text_wrap">
+                    <p>WEB PUB<em>L</em>I<em>S</em>HER <br /><em>J</em>INNYANG</p>
+                    <p>FRONT-END DEVELOPER / UI DEVELOPER</p>
+                    <p>
+                        <span><img src="image/pc/home_icon_01.png" alt="" /></span>
+                        <span><img src="image/pc/home_icon_02.png" alt="" /></span>
+                        <span class="jquery"><img src="image/pc/home_icon_03.png" alt="" /></span>
+                        <span class="boots"><img src="image/pc/home_icon_04.png" alt="" /></span>
+                    </p>
+                </div>
+                <a href="#section2" class="scrolldown"><span></span></a>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="title" data-ani="About">About<span></span></div>
+             <i class="title_sm">자기소개</i>
+            <div class="wrapper">
+                <div class="photo"><img src="image/pc/sujin.jpg" alt="" /></div>
+                <ul class="profile">
+                  <li># Name _ Lee.Su.Jin</li>
+                  <li># Birthday _ 1983. 10. 13</li>
+                  <li># Address _ 경기도 군포시 당동</li>
+                  <li># Phone _ 010.3771.5267</li>
+                  <li># Email _ penguion1013@naver.com</li>
+                </ul>
+            </div>
+        </section>
+        <section id="section3">
+            <div class="title" data-ani="Awards">Awards<span></span></div>
+            <i class="title_sm">웹어워드코리아 수상내역</i>
+          
+            <div class="wrapper ">
+                <div class="timeline_img"><img src="image/pc/img_awards.jpg" alt="" /></div>
+                <div class="timeline clearfix">
+                  <div class="timeline_left">
+                      <p>2012</p>
+                      <ul>
+                          <li><em># LG전자 DIOS 김태희 닷컴</em> 2012 Web Award Korea(대상)</li>
+                          <li><em># POSCO 아는 만큼 가까워집니다</em> 2012 Web Award Korea(최우수상)</li>
+                          <li><em># P&amp;G SK-II 동안 크림</em> 2012 Web Award Korea(우수상)</li>
+                      </ul>
+                    </div>
+                    <div class="timeline_right">
+                        <p>2013</p>
+                        <ul>
+                            <li><em># 코카콜라</em> 2013 Web Award Korea(대상)</li>
+                            <li><em># KGC 인삼공사</em> 2013 Web Award Korea(대상)</li>
+                            <li><em># AIA Real Music Company</em> 2013 Web Award Korea(대상)</li>
+                        </ul>
+                    </div>
+                    <div class="timeline_left">
+                      <p>2014</p>
+                      <ul>
+                          <li><em># 2014 Seoul International Fireworks</em> 2014 Web Award Korea(대상)</li>
+                          <li><em># Downy Aroma Jewel Digital</em> 2014 Web Award Korea(최우수상)</li>
+                          <li><em># 세노비스</em> 2014 Web Award Korea(최우수상)</li>
+                          <li><em># AIA REAL LIFE</em> 2014 Web Award Korea(우수상)</li>
+                      </ul>
+                  </div>
+                  <div class="timeline_right">
+                      <p>2015</p>
+                      <ul>
+                          <li><em># 해태제과</em> 2015 Web Award Korea(최우수상)</li>
+                      </ul>
+                  </div>
+                </div>
+            </div>
 
-						<div id="menu">
-							<a href="javascript:;" class="btn-open-search">
-								<span class="sr-only">검색팝업열기</span>
-							</a>
+        </section>
+        <section id="section4">
+            <div class="parallax">
+                <h3>RESUME</h3>
+                <div class="parallax_right">
+                  <p>웹표준코딩 제작 및 운영</p>
+                  <ul>
+                      <li>2010.06 ~ 2010.08 : CJ 인터넷(상암)</li>
+                      <li>2010.08 ~ 2012.02 : 디지털오션(강남)</li>
+                      <li>2012.02 ~ 현재 : 애드쿠아 인터렉티브(학동)</li>
+                  </ul>
+                </div>
+                <h3>SKILL</h3>
+                <div class="parallax_left">
+                  <div class="canvas_box">
+                    <canvas id="canvas1" width="200" height="200"></canvas>
+                    <p class="percent"><span class="count1">100</span>%</p>
+                    <p class="technology">HTML5</p>
+                  </div>
+                  
+                  <div class="canvas_box">
+                    <canvas id="canvas2" width="200" height="200"></canvas>
+                    <p class="percent"><span class="count2">100</span>%</p>
+                    <p class="technology">CSS3</p>
+                  </div>
 
-							<a href="javascript:;" class="menu-icon">
-								<span> </span>
-								<span> </span>
-								<span> </span>
-							</a>
-						</div>
-
-						<nav id="gnb">
-							<ul>
-								<li><a href="javascript:void(0);">전체</a></li>
-								<li><a href="javascript:void(0);">공무원</a></li>
-								<li><a href="javascript:void(0);">자격증</a></li>
-								<li><a href="javascript:void(0);">어학/취업/입시</a></li>
-								<li><a href="javascript:void(0);">전사이벤트</a></li>
-								<li><a href="javascript:void(0);">ETC</a></li>
-							</ul>
-
-							<a href="javascript:;" class="btn-open-search">
-								<span class="sr-only">검색팝업열기</span>
-							</a>
-						</nav>
-
-
-						<div class="open-search">
-							<div class="box">
-								<a href="javascript:;" class="btn-close-search">
-									<span class="sr-only">검색팝업닫기</span>
-								</a>
-								
-								<form id="formHeaderSearch" name="formHeaderSearch" method="get" action="">
-									<input type="text" id="searchTxt" name="q" maxlength="40" autocomplete="off">
-									<a href="javascript:;" class="btn-search"><strong>SEARCH</strong></a>
-								</form>
-							</div>
-						</div>
-
-					</div>
-				</header>
-				<!--// header -->
-
-				<div id="contents">
-					<div class="main-category">
-						<div class="category-scroll-wrap">
-							<ul class="category-list">
-								<li class="active"><a href="javascript:;">전체</a></li>
-								<li ><a href="javascript:;">상품</a></li>
-								<li ><a href="javascript:;">프로모션/이벤트</a></li>
-								<li ><a href="javascript:;">프리북</a></li>
-								<li ><a href="javascript:;">상품2</a></li>
-								<li ><a href="javascript:;">프로모션/이벤트2</a></li>
-								<li ><a href="javascript:;">프리북3</a></li>
-							</ul>
-						</div>
-
-					</div>
-					<div class="main-search">
-						<div class="select-box">
-							<select class="select">
-								<option value="">2022년</option>
-								<option value="">2021년</option>
-								<option value="">2020년</option>
-							</select>
-						</div>
-
-						<div class="search-list">
-							<ul class="type-check">
-								<li><label><input type="checkbox" checked><span>전체</span></label></li>
-								<li><label><input type="checkbox"><span>12월</span></label></li>
-								<li><label><input type="checkbox"><span>11월</span></label></li>
-								<li><label><input type="checkbox"><span>10월</span></label></li>
-								<li><label><input type="checkbox"><span>9월</span></label></li>
-								<li><label><input type="checkbox"><span>8월</span></label></li>
-								<li><label><input type="checkbox"><span>7월</span></label></li>
-								<li><label><input type="checkbox"><span>6월</span></label></li>
-								<li><label><input type="checkbox"><span>5월</span></label></li>
-								<li><label><input type="checkbox"><span>4월</span></label></li>
-								<li><label><input type="checkbox"><span>3월</span></label></li>
-								<li><label><input type="checkbox"><span>2월</span></label></li>
-								<li><label><input type="checkbox"><span>1월</span></label></li>
-							</ul>
-						</div>
-
-
-						<div class="share-box">
-							<a href="javascript:;" class="btn-share">페이지 URL 공유</a>
-						</div>
-					</div>
-					<div class="main-list-wrap">
-						<div class="component-data">
-							<ul class="component-list">
-								<li>
-									<dl>
-										<dt class="subject">[공무원] 아케르 합격 플래너 무료배포</dt>
-										<dd class="desc">공무원 아케르 합격 플래너 이벤트 페이지 입니다.</dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb1.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[전사이벤트] 합격 서바이벌 강철 에듀윌</dt>
-										<dd class="desc">2022년 6월 1차 전사이벤트 입니다.<br/>강철부대를 모티브로하여 합격에 강한 에듀윌을 표현하였습니다. 2022년 6월 1차 전사이벤트 입니다.<br/>강철부대를 모티브로하여 합격에 강한 에듀윌을 표현하였습니다. </dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb2.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[자격증] 합격레고랜드 이벤트</dt>
-										<dd class="desc">에듀윌 합격레고랜드 7일 자유이용권 받고 2022 여름방학 한 방에 합격 레고~</dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb3.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[자격증] 합격레고랜드 이벤트</dt>
-										<dd class="desc">에듀윌 합격레고랜드 7일 자유이용권 받고<br/> 2022 여름방학 한 방에 합격 레고~</dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb3.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[공무원] 아케르 합격 플래너 무료배포</dt>
-										<dd class="desc">공무원 아케르 합격 플래너 이벤트 페이지 입니다.</dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb1.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[전사이벤트] 합격 서바이벌 강철 에듀윌</dt>
-										<dd class="desc">2022년 6월 1차 전사이벤트 입니다. </dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb2.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[전사이벤트] 합격 서바이벌 강철 에듀윌</dt>
-										<dd class="desc">2022년 6월 1차 전사이벤트 입니다.<br/>강철부대를 모티브로하여 합격에 강한 에듀윌을 표현하였습니다. </dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb2.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li>
-									<dl>
-										<dt class="subject">[공무원] 아케르 합격 플래너 무료배포</dt>
-										<dd class="desc">공무원 아케르 합격 플래너 이벤트 페이지 입니다.</dd>
-										<dd class="date">2022.06.30</dd>
-										<dd class="img">
-											<a href="javascript:;" >
-												<div class="item">
-													<figure class="mod-covered-bg" style="background-image: url('https://img.eduwill.net/eduwill/html/webzine/img/ex_thumb1.jpg');"></figure>
-												</div>
-											</a>
-										</dd>
-									</dl>
-								</li>
-
-							</ul>
-
-							<p class="main-list-btn-area motion">
-								<a href="#" class="btn-more">
-									<span class="line"></span>
-									<span class="txt">MORE</span>
-								</a>
-							</p>
-						</div>
-					</div>
+                  <div class="canvas_box">
+                    <canvas id="canvas3" width="200" height="200"></canvas>
+                    <p class="percent"><span class="count3">90</span>%</p>
+                    <p class="technology">Javascript</p>
+                  </div>
 
 
-				</div>
+                  <div class="canvas_box">
+                    <canvas id="canvas4" width="200" height="200"></canvas>
+                    <p class="percent"><span class="count4">90</span>%</p>
+                    <p class="technology">Jquery</p>
+                  </div>
 
-				<footer>
-					<div class="wrap">
-						<div class="footer-copyright">
-							<div class="footer-logo"></div>
-							<div class="footer-text">(주) 에듀윌</div>
-							<div class="copyright">Copyright &copy; (주)에듀윌 Corp. All rights reserved.</div>
-						</div>
 
-						<!-- <div class="footer-link">
-							<a href="javascript:void(0)" class="btn-privacy">개인정보처리방침</a>
-						</div> -->
-					</div>
-				</footer>
-			</div>
+                  <div class="canvas_box">
+                    <canvas id="canvas5" width="200" height="200"></canvas>
+                    <p class="percent"><span class="count5">90</span>%</p>
+                    <p class="technology">Tweenmax</p>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section id="section5">
+            <div class="title" data-ani="Work">Work<span></span></div>
+            <i class="title_sm">2017~2018년 제작한 포트폴리오</i>
+            <div class="wrapper">
+                <ul class="profile_box clearfix">
+                    <li>
+                        <a href="https://campaign.cenovismall.co.kr/kids/" target="_blank">
+                        <figure>
+                            <img src="image/pc/img_cenovis2.jpg" alt="">
+                          <figcaption>
+                            <div class="txt_box">
+                                <p><em>세노비스 키즈 이벤트</em>Event(웹, 모바일) + VUE</p>
+                              </div>
+                            <div class="heading">
+                              <h2>#14. cenovis</h2>
+                            </div>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </li>
 
-			<div class="dim"></div>
+                  <li>
+                      <a href="http://df.nexon.com/POP/common/getto.php?no=67" target="_blank">
+                      <figure>
+                          <img src="image/pc/img_df.jpg" alt="">
+                        <figcaption>
+                          <div class="txt_box">
+                              <p><em>던전앤파이터</em>PC방 스타트브라우저(웹)</p>
+                            </div>
+                          <div class="heading">
+                            <h2>#13. nexon</h2>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </li>
 
-		</div>
-		<script src="js/script.js"></script>
-	</body>
+                  <li>
+                    <a href="http://www.acafela-sizeup.com/" target="_blank">
+                    <figure>
+                      <img src="image/pc/img_project1.jpg" alt="아카페라사이즈업">
+                      <figcaption>
+                        <div class="txt_box">
+                          <p><em>아카페라사이즈업</em>Acafela sizeup Renewal(반응형)</p>
+                        </div>
+                        <div class="heading">
+                          <h2>#12. Binggrae</h2>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+
+                    <li>
+                        <a href="https://bit.ly/2sBBBFO " target="_blank">
+                        <figure>
+                          <img src="image/pc/img_worlvision.jpg" alt="월드비젼">
+                          <figcaption>
+                            <div class="txt_box">
+                              <p><em>월드비젼</em>Event(웹, 모바일)</p>
+                            </div>
+                            <div class="heading">
+                              <h2>#11. Worldvision</h2>
+                            </div>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </li>
+
+                  <li>
+                    <a href="http://bitly.kr/PRbEZ" target="_blank">
+                    <figure>
+                      <img src="image/pc/img_eucerin.jpg" alt="유세린">
+                      <figcaption>
+                        <div class="txt_box">
+                          <p><em>유세린 스마트스캐너</em>Event(모바일)</p>
+                        </div>
+                        <div class="heading">
+                          <h2>#10. Eucerin</h2>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </li>
+
+                
+                <li>
+                  <a href="http://www.denmarkmmuning.com/" target="_blank">
+                  <figure>
+                    <img src="image/pc/img_mmuning.jpg" alt="뮤닝">
+                    <figcaption>
+                      <div class="txt_box">
+                        <p><em>뮤닝</em>Brand Site(모바일 웹)</p>
+                      </div>
+                      <div class="heading">
+                        <h2>#09. mmuning</h2>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </a>
+              </li>
+
+              <li>
+                <a href="http://event.hodooenglish.com/" target="_blank">
+                <figure>
+                  <img src="image/pc/img_hood.jpg" alt="호두잉글리시">
+                  <figcaption>
+                    <div class="txt_box">
+                      <p><em>호두잉글리시</em>Brand Site(모바일 웹)</p>
+                    </div>
+                    <div class="heading">
+                      <h2>#08. hodooenglish</h2>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+
+
+
+                    <li>
+                        <a href="http://magnumkr.com/common/pleasure/pleasure01.asp" target="_blank">
+                        <figure>
+                            <img src="image/pc/img_project2.jpg" alt="매그넘">
+                          <figcaption>
+                            <div class="txt_box">
+                                <p><em>매그넘</em>Brand Site(Web/Mobile/Tablet)</p>
+                              </div>
+                            <div class="heading">
+                              <h2>#07. Magnum</h2>
+                            </div>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="http://www.goodpeople.co.kr/index.asp" target="_blank">
+                        <figure>
+                            <img src="image/pc/img_project4.jpg" alt="좋은사람들">
+                          <figcaption>
+                            <div class="txt_box">
+                                <p><em>좋은사람들</em>Shopping Mall(Web, Mobile)</p>
+                              </div>
+                            <div class="heading">
+                              <h2>#06. GOODPEOPLE</h2>
+                            </div>
+                          </figcaption>
+                        </figure>
+                      </a>
+                    </li>
+                    <li>
+                        <a href="https://odenseofficial.com/" target="_blank">
+                          <figure>
+                              <img src="image/pc/img_project5.jpg" alt="오덴세">
+                            <figcaption>
+                              <div class="txt_box">
+                                  <p><em>오덴세</em>Odense Homepage(Web, Mobile)</p>
+                                </div>
+                              <div class="heading">
+                                <h2>#05. ODENSE</h2>
+                              </div>
+                            </figcaption>
+                          </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://penguin1013.dothome.co.kr/project/wwf" target="_blank">
+                          <figure>
+                              <img src="image/pc/img_project6.jpg" alt="세계자연기금">
+                            <figcaption>
+                              <div class="txt_box">
+                                  <p><em>세계자연기금</em>Promotion(Web/Mobile)</p>
+                                </div>
+                              <div class="heading">
+                                <h2>#04. WWF</h2>
+                              </div>
+                            </figcaption>
+                          </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://penguin1013.dothome.co.kr/project/maplestory" target="_blank">
+                          <figure>
+                              <img src="image/pc/img_project8.jpg" alt="메이블스토리">
+                            <figcaption>
+                              <div class="txt_box">
+                                  <p><em>메이블스토리</em>Promotion(Web/Mobile)</p>
+                                </div>
+                              <div class="heading">
+                                <h2>#03. Maplestory</h2>
+                              </div>
+                            </figcaption>
+                          </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:alert('Promotion End!');">
+                          <figure>
+                              <img src="image/pc/img_project9.jpg" alt="메가박스">
+                            <figcaption>
+                              <div class="txt_box">
+                                  <p><em>메가박스</em>Promotion(Web/Mobile)</p>
+                                </div>
+                              <div class="heading">
+                                <h2>#02. Megabox</h2>
+                              </div>
+                            </figcaption>
+                          </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:alert('Not OPEN!');">
+                          <figure>
+                              <img src="image/pc/img_project7.jpg" alt="예스">
+                            <figcaption>
+                              <div class="txt_box">
+                                <p><em>예스</em>Shopping Mall(Web, Mobile)</p>
+                                </div>
+                              <div class="heading">
+                                <h2>#01. YES</h2>
+                              </div>
+                            </figcaption>
+                          </figure>
+                        </a>
+                    </li>  
+                </ul>
+            </div>
+        </section>
+        <footer><p class="copy">Copyright © 2019. Lee Sujin All Rights Reserved.</p></footer>
+    </main>
+    <script data-main="js/config.js" src="js/lib/require.js"></script>
+    <script>
+        requirejs([ "Main" ]);
+    </script>
+</body>
 </html>

@@ -55,13 +55,15 @@
 // @include transition(all, .3s, ease-out);
 @mixin transition($what, $time, $how: null) {
 	@each $prefix in -webkit-, -o-, '' {
-		#{$prefix}transition: $what $time $how;
-	}
+		// #{$prefix}transition: $what $time $how;
+		#{$prefix}transition-property: $what;
+		#{$prefix}transition-duration: $time;
 
-	@if $how {
-		transition-timing-function: $how;
-	} @else {
-		transition-timing-function: ease-out;
+		@if $how {
+			#{$prefix}transition-timing-function: $how;
+		} @else {
+			#{$prefix}transition-timing-function: ease-out;
+		}
 	}
 }
 
@@ -168,8 +170,8 @@
 	display: block;
 	@include vw(width, $width);
 	@include vw(height, $height);
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		position: absolute;
 		top: 50%;
@@ -180,8 +182,8 @@
 		margin-left: -($width / 2) / 2;
 		background-color: $color;
 	}
-	&:before { @include rotate(45deg); }
-	&:after { @include rotate(315deg); }
+	&::before { @include rotate(45deg); }
+	&::after { @include rotate(315deg); }
 	span {
 		position: absolute;
 		display: inline-block;
@@ -216,8 +218,8 @@
 		background-color: transparent;
 	}
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		display: block;
 		width: 140%;
@@ -225,14 +227,14 @@
 		background: $lineColor;
 	}
 
-	&:before {
+	&::before {
 		margin-top: -$thickness/4;
 		margin-left: $thickness/2;
 		@include rotate(45deg);
 		@include transformOrigin(0 0);
 	}
 
-	&:after {
+	&::after {
 		margin-left: -41%;
 		margin-top: -$thickness;
 		@include rotate(-45deg);
@@ -248,7 +250,7 @@
 		display: inline-block;
 	}
 
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		top: 50%;
@@ -282,9 +284,11 @@
 // arrow for slide
 // @include slideArrow(left, 60px, 60px, 2px, #000);
 // @include slideArrow(right, 60px, 60px, 2px, #000);
-// @include slideArrow(left, 60px, 60px, 2px, #fff, rgba(0,0,0,.7));
-// @include slideArrow(right, 60px, 60px, 2px, #fff, rgba(0,0,0,.7));
-@mixin slideArrow($direction, $width, $height, $borderWidth, $borderColor, $bgColor: null) {
+// @include slideArrow(left, 60px, 60px, 2px, #fff, rgba(0,0,0,.5));
+// @include slideArrow(right, 60px, 60px, 2px, #fff, rgba(0,0,0,.5));
+// @include slideArrow(left, 60px, 60px, 2px, #fff, rgba(0,0,0,.5), $margin: 620px);
+// @include slideArrow(right, 60px, 60px, 2px, #fff, rgba(0,0,0,.5), $margin: 620px);
+@mixin slideArrow($direction, $width, $height, $borderWidth, $borderColor, $bgColor: null, $margin: null) {
 	position: absolute;
 	top: 50%;
 	z-index: 10;
@@ -301,11 +305,16 @@
 	cursor: pointer;
 	@include translateY(-50%);
 
-	
 	@if $direction == 'right' {
-		right: 0;
+		right: 50%;
+		@if $margin {
+			@include vw(margin-right, -$margin);
+		}
 	} @else if $direction == 'left' {
-		left: 0;
+		left: 50%;
+		@if $margin {
+			@include vw(margin-left, -$margin);
+		}
 	}
 
 	@if $bgColor {
@@ -314,7 +323,7 @@
 		background: none;
 	}
 
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		top: 50%;
@@ -350,11 +359,6 @@
 // rem
 // @include rem(margin, 25px 20px 0);
 // https://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
-@function parseInt($n) {
-	// The mixin relies on a function to parse the integer from a value with a unit
-	@return $n / ($n * 0 + 1);
-}
-
 @mixin rem($property, $values) {
 	$px: (); // We define a list of values for both units
 	$rem: (); // We define a list of values for both units
@@ -433,22 +437,6 @@
 	}
 }
 
-// Read the article: http://sassbreak.com/viewport-relative-headings-with-sass
-// Function
-@function get-vw($target){
-	// 1 vw is equal to 1% of the viewport width
-	$vw-context: ($max-mobile * .01) * 1px; // 1% viewport width
-	@return ($target/$vw-context) * 1vw;
-}
-
-// percent
-// top: percent(722, 1000);
-// right: percent(50);
-@function percent($target, $parent: $max-mobile) {
-	@return percentage($target / $parent);
-}
-
-
 // pointer
 // @include pointer(50%, 0, 66px, 73px, 20, bounce);
 // @include pointer(50%, 0, 66px, 73px, 20);
@@ -457,7 +445,7 @@
 		position: relative;
 		display: inline-block;
 	}
-	&:after {
+	&::after {
 		content: '';
 		position: absolute;
 		top: $top;
@@ -612,9 +600,333 @@
 @mixin multipleEllipsis($line){
 	display: -webkit-box;
 	overflow: hidden;
-	-o-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-	-webkit-line-clamp: $line;
-	-webkit-box-orient: vertical;
 	word-wrap: break-word;
+	@each $prefix in -o-, '' {
+		#{$prefix}text-overflow: ellipsis;
+	}
+	@each $prefix in -webkit-, '' {
+		#{$prefix}line-clamp: $line;
+		#{$prefix}box-orient: vertical;
+	}
+}
+
+// --------------------------------------------------
+// Flexbox SASS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+// Flexbox display
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+// Inline flex display
+@mixin inline-flex {
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($fg: 1, $fs: 0, $fb: auto) {
+	// Set a variable to be used by box-flex properties
+	$fg-boxflex: $fg;
+	// Box-Flex only supports a flex-grow value so lets grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == 'list' {
+		$fg-boxflex: nth($fg, 1);
+	}
+	@each $prefix in -webkit-, -moz- {
+		#{$prefix}box: $fg-boxflex;
+	}
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}flex: $fg $fs $fb;
+	}
+	// -webkit-box: $fg-boxflex;
+	//    -moz-box: $fg-boxflex;
+	// -webkit-flex: $fg $fs $fb;
+	// 	 -ms-flex: $fg $fs $fb;
+	// 		   flex: $fg $fs $fb;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row (default) | row-reverse | column | column-reverse
+@mixin flex-direction($direction: row) {
+	@if $direction == row-reverse {
+		@each $prefix in -webkit-, -moz- {
+			#{$prefix}box-direction: reverse;
+			#{$prefix}box-orient: horizontal;
+		}
+		// -webkit-box-direction: reverse;
+		// -moz-box-direction: reverse;
+		// -webkit-box-orient: horizontal;
+		// -moz-box-orient: horizontal;
+	} @else if $direction == column {
+		@each $prefix in -webkit-, -moz- {
+			#{$prefix}box-direction: normal;
+			#{$prefix}box-orient: vertical;
+		}
+		// -webkit-box-direction: normal;
+		// -moz-box-direction: normal;
+		// -webkit-box-orient: vertical;
+		// -moz-box-orient: vertical;
+	} @else if $direction == column-reverse {
+		@each $prefix in -webkit-, -moz- {
+			#{$prefix}box-direction: reverse;
+			#{$prefix}box-orient: vertical;
+		}
+		// -webkit-box-direction: reverse;
+		// -moz-box-direction: reverse;
+		// -webkit-box-orient: vertical;
+		// -moz-box-orient: vertical;
+	} @else {
+		@each $prefix in -webkit-, -moz- {
+			#{$prefix}box-direction: normal;
+			#{$prefix}box-orient: horizontal;
+		}
+		// -webkit-box-direction: normal;
+		// -moz-box-direction: normal;
+		// -webkit-box-orient: horizontal;
+		// -moz-box-orient: horizontal;
+	}
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}flex-direction: $direction;
+	}
+	// -webkit-flex-direction: $direction;
+	// 		-ms-flex-direction: $direction;
+	// 			  flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($value: nowrap) {
+	// No Webkit/FF Box fallback.
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}flex-wrap: $value;
+	}
+	@if $value == nowrap {
+		-ms-flex-wrap: none;
+	}
+	// -webkit-flex-wrap: $value;
+	// @if $value == nowrap {
+	// 	-ms-flex-wrap: none;
+	// } @else {
+	// 	-ms-flex-wrap: $value;
+	// }
+	// flex-wrap: $value;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($values: (row nowrap)) {
+	// No Webkit/FF Box fallback.
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}flex-flow: $values;
+	}
+	// -webkit-flex-flow: $values;
+	// 		-ms-flex-flow: $values;
+	// 			  flex-flow: $values;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($int: 0) {
+	@each $prefix in -webkit-, -moz- {
+		#{$prefix}box-ordinal-group: $int + 1;
+	}
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}order: $int;
+	}
+	// -webkit-box-ordinal-group: $int + 1;
+	// -moz-box-ordinal-group: $int + 1;
+	// -webkit-order: $int;
+	// -ms-order: $int;
+	// 			  order: $int;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($int: 1) {
+	@each $prefix in -webkit-, -moz- {
+		#{$prefix}box-flex: $int;
+	}
+	@each $prefix in -webkit-, -ms-, '' {
+		#{$prefix}flex-grow: $int;
+		@if $prefix == -ms- {
+			-ms-flex: $int;
+		}
+	}
+	// -webkit-box-flex: $int;
+	// 	-moz-box-flex: $int;
+	// -webkit-flex-grow: $int;
+	// 		-ms-flex: $int;
+	// 		flex-grow: $int;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($int: 0) {
+	@each $prefix in -webkit-, -moz-, -ms-, '' {
+		#{$prefix}flex-shrink: $int;
+		@if $prefix == -ms- {
+			-ms-flex: $int;
+		}
+	}
+	// -webkit-flex-shrink: $int;
+	//    -moz-flex-shrink: $int;
+	// 				 -ms-flex: $int;
+	// 			  flex-shrink: $int;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($value: auto) {
+	@each $prefix in -webkit-, '' {
+		#{$prefix}flex-basis: $value;
+	}
+	// -webkit-flex-basis: $value;
+	// 			  flex-basis: $value;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($value: flex-start) {
+	@if $value == flex-start {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-pack: start;
+			@if $prefix == -ms- {
+				-ms-flex-pack: start;
+			}
+		}
+		// -webkit-box-pack: start;
+		// -moz-box-pack: start;
+		// -ms-flex-pack: start;
+	} @else if $value == flex-end {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-pack: end;
+			@if $prefix == -ms- {
+				-ms-flex-pack: end;
+			}
+		}
+		// -webkit-box-pack: end;
+		// -moz-box-pack: end;
+		// -ms-flex-pack: end;
+	} @else if $value == space-between {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-pack: justify;
+			@if $prefix == -ms- {
+				-ms-flex-pack: justify;
+			}
+		}
+		// -webkit-box-pack: justify;
+		// -moz-box-pack: justify;
+		// -ms-flex-pack: justify;
+	} @else if $value == space-around {
+		-ms-flex-pack: distribute;
+	} @else {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-pack: $value;
+			@if $prefix == -ms- {
+				-ms-flex-pack: $value;
+			}
+		}
+		// -webkit-box-pack: $value;
+		// -moz-box-pack: $value;
+		// -ms-flex-pack: $value;
+	}
+	@each $prefix in -webkit-, '' {
+		#{$prefix}justify-content: $value;
+	}
+	// -webkit-justify-content: $value;
+	// justify-content: $value;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($value: stretch) {
+	// No Webkit Box Fallback.
+	-webkit-align-content: $value;
+	@if $value == flex-start {
+		-ms-flex-line-pack: start;
+	} @else if $value == flex-end {
+		-ms-flex-line-pack: end;
+	} @else {
+		-ms-flex-line-pack: $value;
+	}
+	align-content: $value;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($value: stretch) {
+	@if $value == flex-start {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-align: start;
+			@if $prefix == -ms- {
+				-ms-flex-align: start;
+			}
+		}
+		// -webkit-box-align: start;
+		// -moz-box-align: start;
+		// -ms-flex-align: start;
+	} @else if $value == flex-end {
+		@each $prefix in -webkit-, -moz- {
+			#{$prefix}box-align: end;
+		}
+		@each $prefix in -ms- {
+			#{$prefix}flex-align: end;
+		}
+		// -webkit-box-align: end;
+		// -moz-box-align: end;
+		// -ms-flex-align: end;
+	} @else {
+		@each $prefix in -webkit-, -moz-, -ms- {
+			#{$prefix}box-align: $value;
+			@if $prefix == -ms- {
+				-ms-flex-align: $value;
+			}
+		}
+		// -webkit-box-align: $value;
+		// -moz-box-align: $value;
+		// -ms-flex-align: $value;
+	}
+	@each $prefix in -webkit-, '' {
+		#{$prefix}align-items: $value;
+	}
+	// -webkit-align-items: $value;
+	// 			  align-items: $value;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($value: auto) {
+	// No Webkit Box Fallback.
+	-webkit-align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $value;
+	}
+	align-self: $value;
 }
