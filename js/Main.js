@@ -129,9 +129,9 @@ require([
     function circleDrawing(){
         animateCircle(curPerc, 101, 'canvas1');
         animateCircle(curPerc, 101, 'canvas2');
-        animateCircle(curPerc, 91, 'canvas3');
-        animateCircle(curPerc, 91, 'canvas4');
-        animateCircle(curPerc, 91, 'canvas5');
+        animateCircle(curPerc, 101, 'canvas3');
+        animateCircle(curPerc, 101, 'canvas4');
+        animateCircle(curPerc, 101, 'canvas5');
     }
     
     function animateCircle(current , endPercent, name) {
@@ -239,9 +239,9 @@ require([
             circleDrawing();
             count('.count1', 100);
             count('.count2', 100);
-            count('.count3', 90);
-            count('.count4', 90);
-            count('.count5', 90);
+            count('.count3', 100);
+            count('.count4', 100);
+            count('.count5', 100);
         },300);
     }
 

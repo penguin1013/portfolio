@@ -325,6 +325,24 @@ a {
   display: inline-block;
 }
 
+br.mobile {
+  display: block;
+}
+@media screen and (min-width: 720px) {
+  br.mobile {
+    display: none;
+  }
+}
+
+br.pc {
+  display: none;
+}
+@media screen and (min-width: 720px) {
+  br.pc {
+    display: block;
+  }
+}
+
 /* ******************************************************
 	00. SCSS
 *******************************************************/
@@ -374,7 +392,6 @@ img {
   position: relative;
   width: 100%;
   min-width: 320px;
-  max-width: 1920px;
   height: 100%;
   margin: 0 auto;
   background-color: rgb(248, 248, 248);
@@ -390,7 +407,6 @@ img {
 
 #header .header_wrap {
   position: relative;
-  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -839,7 +855,18 @@ section {
   background-color: #fff;
 }
 #section2 .photo {
-  margin-top: 60px;
+  width: 41.6666666667vw;
+  margin: 8.3333333333vw auto 0;
+}
+@media screen and (min-width: 720px) {
+  #section2 .photo {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 720px) {
+  #section2 .photo {
+    margin: 60px auto 0;
+  }
 }
 #section2 .photo img {
   opacity: 0;
@@ -945,12 +972,21 @@ section {
 #section4 .parallax .parallax_left {
   text-align: center;
   opacity: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #section4 .parallax .parallax_left .canvas_box {
   display: inline-block;
   position: relative;
   width: 200px;
   height: 200px;
+  margin-bottom: 4.1666666667vw;
+}
+@media screen and (min-width: 720px) {
+  #section4 .parallax .parallax_left .canvas_box {
+    margin-bottom: 30px;
+  }
 }
 #section4 .parallax .parallax_left .canvas_box p {
   color: #fff;
@@ -963,22 +999,46 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5277777778rem;
+  font-size: 3.3333333333vw;
+}
+@media screen and (min-width: 720px) {
+  #section4 .parallax .parallax_left .canvas_box p.percent {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 720px) {
+  #section4 .parallax .parallax_left .canvas_box p.percent {
+    font-size: 22px;
+  }
 }
 #section4 .parallax .parallax_left .canvas_box p.technology {
-  font-size: 1.25rem;
+  font-size: 3.3333333333vw;
+}
+@media screen and (min-width: 720px) {
+  #section4 .parallax .parallax_left .canvas_box p.technology {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 720px) {
+  #section4 .parallax .parallax_left .canvas_box p.technology {
+    font-size: 22px;
+  }
 }
 
 #section5 {
   background-color: #fafafa;
 }
+#section5 .wrapper {
+  padding-bottom: 0;
+}
 #section5 .profile_box {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 }
 #section5 .profile_box > li {
   width: 25%;
-  float: left;
-  padding: 0.5em;
 }
 #section5 .profile_box > li a {
   display: block;
@@ -992,9 +1052,11 @@ section {
   background: #000;
   color: #fff;
   text-align: center;
+  margin: 0;
 }
 #section5 .profile_box figure img {
   opacity: 0.8;
+  width: 100%;
 }
 #section5 .profile_box figure figcaption {
   position: absolute;
