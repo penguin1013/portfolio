@@ -16,7 +16,7 @@ define([
         }
 
         function initAnimate(){
-            $('.text_wrap p').each(function(){
+            $('.text-wrap p').each(function(){
 				var _offy	=	($(this).index() == 2)?-70:70;
 				TweenMax.set($(this) , {y : _offy , alpha : 0});
 
@@ -54,7 +54,7 @@ define([
             }
 
             // 영상리사이징
-            $('.video_wrap').each(function(){
+            $('.video-wrap').each(function(){
                 var $node = $(this);	
                 var ratio = 16/9;
                 var width = $node.width(),
@@ -74,13 +74,13 @@ define([
 
             // 메인 언어 리사이징
             if( _wid <= App.GlobalVars.BREAKPOINT_MOBILE){
-                TweenMax.to($(".text_wrap>p:eq(2)") , 0.5 , {scale:0.7, ease:Back.easeOut});
-                $(".jquery>img").attr({src:"image/pc/home_icon_03_m.png"});
-                $(".boots>img").attr({src:"image/pc/home_icon_04_m.png"});
+                TweenMax.to($(".text-wrap>p:eq(2)") , 0.5 , {scale:0.7, ease:Back.easeOut});
+                //$(".jquery>img").attr({src:"image/pc/home_icon_03_m.png"});
+              //  $(".boots>img").attr({src:"image/pc/home_icon_04_m.png"});
             }else{
-                TweenMax.to($(".text_wrap>p:eq(2)") , 0.5 , {scale:1, ease:Back.easeOut});
-                $(".jquery>img").attr({src:"image/pc/home_icon_03.png"});
-                $(".boots>img").attr({src:"image/pc/home_icon_04.png"});
+                TweenMax.to($(".text-wrap>p:eq(2)") , 0.5 , {scale:1, ease:Back.easeOut});
+               // $(".jquery>img").attr({src:"image/pc/home_icon_03.png"});
+               // $(".boots>img").attr({src:"image/pc/home_icon_04.png"});
             }
         }
 

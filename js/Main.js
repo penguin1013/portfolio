@@ -47,7 +47,7 @@ require([
     function loading() {
         setTimeout(function(){
             $("#wrap").addClass('open');
-            $(".video_wrap").show();
+            $(".video-wrap").show();
             $(".loading").hide();
         },100);
 
@@ -200,7 +200,7 @@ require([
         TweenMax.fromTo($("#section3").find($title).children('span'), 1,{y:-100,  opacity : 0}, {y : 0 , opacity : 1 ,  ease:Bounce.easeOut});
 
         _timer2 = setTimeout(function(){      
-            $(".timeline_left").find('li').each( function( i ){         
+            $(".timeline-left").find('li').each( function( i ){         
                 if(i>0){
                     TweenMax.fromTo(  $(this), 0.5, {opacity:0, x:30 },{ opacity : 1, x : 0, delay: 0.07*i,  ease:Cubic.easeOut});
                 }else{
@@ -208,7 +208,7 @@ require([
                 }
             });
 
-            $(".timeline_right").find('li').each( function( i ){         
+            $(".timeline-right").find('li').each( function( i ){         
                 if(i>0){
                     TweenMax.fromTo(  $(this), 0.5, {opacity:0, x:-30 },{ opacity : 1, x : 0, delay: 0.07*i,  ease:Cubic.easeOut});
                 }else{
@@ -229,11 +229,11 @@ require([
         _timer3 = setTimeout(function(){      
             TweenMax.fromTo( $(".parallax>h3"), 0.5,{y:70,  opacity : 0}, {y : 0 , opacity : 1 ,  ease:Back.easeOut});
             if(_wid > App.GlobalVars.BREAKPOINT_TABLET2){
-                TweenMax.fromTo($(".parallax_left"), 0.5,{x:-100,  opacity : 0}, {x : 0 , opacity : 1 ,  ease:Back.easeOut});
-                TweenMax.fromTo($(".parallax_right"), 0.5,{x:100,  opacity : 0}, {x : 0 , opacity : 1 ,  ease:Back.easeOut});
+                TweenMax.fromTo($(".parallax-left"), 0.5,{x:-100,  opacity : 0}, {x : 0 , opacity : 1 ,  ease:Back.easeOut});
+                TweenMax.fromTo($(".parallax-right"), 0.5,{x:100,  opacity : 0}, {x : 0 , opacity : 1 ,  ease:Back.easeOut});
             }else{
-                TweenMax.fromTo($(".parallax_left"), 0.5,{y:20,  opacity : 0}, {y : 0 , opacity : 1 ,  delay:0.15, ease:Back.easeOut});
-                TweenMax.fromTo($(".parallax_right"), 0.5,{y:20,  opacity : 0}, {y : 0 , opacity : 1 , delay:0.25, ease:Back.easeOut});
+                TweenMax.fromTo($(".parallax-left"), 0.5,{y:20,  opacity : 0}, {y : 0 , opacity : 1 ,  delay:0.15, ease:Back.easeOut});
+                TweenMax.fromTo($(".parallax-right"), 0.5,{y:20,  opacity : 0}, {y : 0 , opacity : 1 , delay:0.25, ease:Back.easeOut});
             }
 
             circleDrawing();

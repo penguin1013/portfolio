@@ -24,7 +24,7 @@ define([
             
             $header = $("#header");
             $bg = $header.find('.bg');
-            $btnMenu = $(".btn_menu");
+            $btnMenu = $(".btn-menu");
             $gnb = $('#gnb');
             $gnbList = $gnb.find("ul li");
 
