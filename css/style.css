@@ -1158,21 +1158,21 @@ section {
 #section5 .wrapper {
   padding-bottom: 0;
 }
-#section5 .profile-box {
+#section5 .portfolio-list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
 }
-#section5 .profile-box > li {
+#section5 .portfolio-list > .col {
   width: 25%;
 }
-#section5 .profile-box > li a {
+#section5 .portfolio-list > .col a {
   display: block;
   width: 100%;
   text-align: center;
 }
-#section5 .profile-box figure {
+#section5 .portfolio-list figure {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -1181,11 +1181,11 @@ section {
   text-align: center;
   margin: 0;
 }
-#section5 .profile-box figure img {
+#section5 .portfolio-list figure img {
   opacity: 0.8;
   width: 100%;
 }
-#section5 .profile-box figure figcaption {
+#section5 .portfolio-list figure figcaption {
   position: absolute;
   top: 45%;
   left: 7%;
@@ -1194,14 +1194,14 @@ section {
   border: 1px solid #fff;
   border-width: 1px 1px 0;
 }
-#section5 .profile-box figure .heading {
+#section5 .portfolio-list figure .heading {
   overflow: hidden;
   transform: translateY(50%);
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-#section5 .profile-box figure h2 {
+#section5 .portfolio-list figure h2 {
   display: table;
   margin: 0 auto;
   padding: 0 10px;
@@ -1213,11 +1213,11 @@ section {
   color: #fff;
 }
 @media screen and (min-width: 720px) {
-  #section5 .profile-box figure h2 {
+  #section5 .portfolio-list figure h2 {
     font-size: 20px;
   }
 }
-#section5 .profile-box figure h2:before, #section5 .profile-box figure h2:after {
+#section5 .portfolio-list figure h2:before, #section5 .portfolio-list figure h2:after {
   position: absolute;
   display: block;
   width: 500%;
@@ -1226,13 +1226,13 @@ section {
   background: #fff;
   top: 50%;
 }
-#section5 .profile-box figure h2:before {
+#section5 .portfolio-list figure h2:before {
   left: -500%;
 }
-#section5 .profile-box figure h2:after {
+#section5 .portfolio-list figure h2:after {
   right: -500%;
 }
-#section5 .profile-box .txt-box {
+#section5 .portfolio-list .txt-box {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1240,32 +1240,33 @@ section {
   padding: 0 20px;
   margin: 0;
   opacity: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 2.2222222222vw;
+  line-height: 1.4;
 }
-#section5 .profile-box .txt-box p {
-  font-size: 14px;
+@media screen and (min-width: 720px) {
+  #section5 .portfolio-list .txt-box {
+    font-size: 16px;
+  }
 }
-#section5 .profile-box .txt-box p em {
-  display: block;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-#section5 .profile-box li > a:hover img,
-#section5 .profile-box .pofol_hover img {
+#section5 .portfolio-list .col > a:hover img,
+#section5 .portfolio-list .pofol_hover img {
   opacity: 0.25;
   transform: scale(1.1);
 }
-#section5 .profile-box li > a:hover figcaption,
-#section5 .profile-box .pofol_hover figcaption {
+#section5 .portfolio-list .col > a:hover figcaption,
+#section5 .portfolio-list .pofol_hover figcaption {
   top: 10%;
   bottom: 10%;
 }
-#section5 .profile-box li > a:hover .txt-box,
-#section5 .profile-box .pofol_hover .txt-box {
+#section5 .portfolio-list .col > a:hover .txt-box,
+#section5 .portfolio-list .pofol_hover .txt-box {
   opacity: 1;
   transition-delay: 0.35s;
 }
-#section5 .profile-box figure * {
+#section5 .portfolio-list figure * {
   transition: all 0.45s ease-in-out;
   color: #fff;
 }

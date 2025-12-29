@@ -2,14 +2,16 @@
 require([
     "App",
     "Header",
-    "Section1"
-], function( App, Header, Section1 ){
+    "Section1",
+	"Section5"
+], function( App, Header, Section1, Section5 ){
 
     function init(){
         App.Init();
         Header.Init();
         Section1.Init();
-        
+		Section5.Init();
+
         loading();
         
         create();
@@ -263,7 +265,11 @@ require([
 
     function showSection5(){
         TweenMax.fromTo($("#section5").find($title).children('span'), 1,{y:-100,  opacity : 0}, {y : 0 , opacity : 1 ,  ease:Bounce.easeOut});
+
+
     }
+
+
 
     function gnbScroll($idx){		
         var idx = $idx;
