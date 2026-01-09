@@ -25,8 +25,8 @@ const Header = () => {
                     </a>
                 </h1>
                 <a href="#!" className="btn-menu" onClick={toggleMenu}>
-                    <img src="/image/common/btn_menu_off.png" alt="" className="off" />
-                    <img src="/image/common/btn_menu_on.png" alt="" className="on" />
+                    <img src={`${import.meta.env.BASE_URL}image/common/btn_menu_off.png`} alt="" className="off" />
+                    <img src={`${import.meta.env.BASE_URL}image/common/btn_menu_on.png`} alt="" className="on" />
                 </a>
                 <p className="bg"><span></span></p>
             </div>

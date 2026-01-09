@@ -26,7 +26,7 @@ const Hero = () => {
                     playsInline
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 >
-                    <source src="/image/video/main_video.mp4" type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}image/video/main_video.mp4`} type="video/mp4" />
                 </video>
             </div>
             <div className="title-wrap">
@@ -34,11 +34,11 @@ const Hero = () => {
                     <p>WEB <br className="mobile" />PUB<em>L</em>I<em>S</em>HER <br /><em>J</em>INNYANG</p>
                     <p>FRONT-END DEVELOPER / UI DEVELOPER</p>
                     <p>
-                        <span><img src="/image/common/home_icon_01.png" alt="" /></span>
-                        <span><img src="/image/common/home_icon_02.png" alt="" /></span>
-                        <span className="jquery"><img src="/image/common/home_icon_03.png" alt="" /></span>
-                        <span className="boots"><img src="/image/common/home_icon_04.png" alt="" /></span>
-                        <span className="vuejs"><img src="/image/common/home_icon_05.png" alt="" /></span>
+                        <span><img src={`${import.meta.env.BASE_URL}image/common/home_icon_01.png`} alt="" /></span>
+                        <span><img src={`${import.meta.env.BASE_URL}image/common/home_icon_02.png`} alt="" /></span>
+                        <span className="jquery"><img src={`${import.meta.env.BASE_URL}image/common/home_icon_03.png`} alt="" /></span>
+                        <span className="boots"><img src={`${import.meta.env.BASE_URL}image/common/home_icon_04.png`} alt="" /></span>
+                        <span className="vuejs"><img src={`${import.meta.env.BASE_URL}image/common/home_icon_05.png`} alt="" /></span>
                     </p>
                 </div>
                 <a href="#section2" className="scrolldown"><span></span></a>

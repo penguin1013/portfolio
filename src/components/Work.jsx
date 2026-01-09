@@ -15,7 +15,7 @@ const Work = () => {
         brand: '',
         tag: '',
         link: '',
-        thumbnail: '/image/common/img_eduwill.jpg' // Default image
+        thumbnail: `${import.meta.env.BASE_URL}image/common/img_eduwill.jpg` // Default image
     });
 
     // Save to LocalStorage whenever the list significantly changes (only needed for NEW items ideally, but for now syncing all combined state is tricky if we don't want to duplicate base data. 
@@ -68,7 +68,7 @@ const Work = () => {
             brand: '',
             tag: '',
             link: '',
-            thumbnail: '/image/common/img_eduwill.jpg'
+            thumbnail: `${import.meta.env.BASE_URL}image/common/img_eduwill.jpg`
         });
 
         alert('포트폴리오가 저장되었습니다! (브라우저 LocalStorage)');
